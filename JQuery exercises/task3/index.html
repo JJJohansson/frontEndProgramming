@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 3</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <p>
+    Paragraph 1
+  </p>
+  <p>
+    Paragraph 2
+  </p>
+  <p id="info">
+    Paragraph 3
+  </p>
+  <input id="hide" type="button" value="Hide" />
+  <br />
+  <input id="alert" type="button" value="Alert" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  /*
+  a.) How you add listener to the first <p>-elements which hides the element when you click it.
+  b.) How you add listener to the all <p>-elements which hides them when you double click these.
+  c.) How you add listener to button which hides all <p>-elements and change button text to "Pressed"
+  d.) How you add listener to button which opens alert window and show the text from the first <p>-element in it.
+
+  */
+
+  $(document).ready(function() {
+
+    // A:
+    $('p:first').click(function() {
+      $(this).hide();
+    });
+
+    // B:
+    $('p').dblclick(function() {
+      $(this).hide();
+    });
+
+    // C:
+    $('#hide').click(function() {
+      $('p').hide();
+      $(this).attr('value', 'Pressed');
+    });
+
+    // D:
+    $('#alert').click(function() {
+      alert($('p:first').text());
+    });
+
+  });
+
+</script>
+</body>
+</html>

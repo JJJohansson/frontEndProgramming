@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 2</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <p>
+    Paragraph 1
+  </p>
+  <p>
+    Paragraph 2
+  </p>
+  <p id="info">
+    Paragraph 3
+  </p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  /*
+    a.) How you can change the text in paragraph element?
+    b.) How you can append to paragraph element?
+    c.) How you can change paragraph element’s textcolor to red
+
+  */
+
+  $(document).ready(function() {
+    // A:
+    $('p').text('Changed text.');
+
+    // B:
+    $('p').append(' Appended text.');
+
+    $('p').css('color', 'red');
+
+  });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 5</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container col-md-12">
+    <p id="chapter1">
+      <strong>Chapter 1. </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at arcu pharetra, vestibulum nisi a, tincidunt leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin finibus aliquet sem, id rhoncus orci. Ut ac ultrices est, a porttitor odio. Fusce lobortis commodo mauris eget elementum. In at ipsum dictum, molestie tellus sagittis, fermentum est. Duis dapibus nulla vitae accumsan pellentesque. Cras scelerisque eget turpis ut placerat. Proin tristique nibh diam, ac egestas diam auctor sit amet. Sed ornare eros ut lorem feugiat faucibus. Nunc ut aliquet ligula. Aliquam ornare vestibulum nunc, et lacinia dolor semper eu. Curabitur sit amet sapien ut ligula rutrum lobortis. Integer cursus purus diam, ullamcorper maximus urna volutpat et.
+    </p>
+    <p id="chapter2">
+      <strong>Chapter 2. </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at arcu pharetra, vestibulum nisi a, tincidunt leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin finibus aliquet sem, id rhoncus orci. Ut ac ultrices est, a porttitor odio. Fusce lobortis commodo mauris eget elementum. In at ipsum dictum, molestie tellus sagittis, fermentum est. Duis dapibus nulla vitae accumsan pellentesque. Cras scelerisque eget turpis ut placerat. Proin tristique nibh diam, ac egestas diam auctor sit amet. Sed ornare eros ut lorem feugiat faucibus. Nunc ut aliquet ligula. Aliquam ornare vestibulum nunc, et lacinia dolor semper eu. Curabitur sit amet sapien ut ligula rutrum lobortis. Integer cursus purus diam, ullamcorper maximus urna volutpat et.
+    </p>
+    <button id="toggle" type="button" class="btn btn-secondary">Toggle Chapter 1</button>
+    <button id="fade" type="button" class="btn btn-secondary">Fade out both</button>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+
+  $(document).ready(function() {
+    $("#chapter1").hide();
+
+    $("#toggle").click(function() {
+      $("#chapter1").toggle();
+
+    $("#fade").click(function() {
+      $("#chapter1").fadeOut();
+      $("#chapter2").fadeOut();
+    });
+
+    });
+  });
+
+</script>
+</body>
+</html>

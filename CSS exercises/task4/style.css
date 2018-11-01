@@ -1,0 +1,11 @@
+body {
+  width: 30%;
+}
+
+img {
+  height: 75px;
+  width: 150px;
+  border: 1px solid pink;
+  float:left;
+  margin: 1em;
+}

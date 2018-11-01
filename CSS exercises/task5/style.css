@@ -1,0 +1,19 @@
+
+#flex-container {
+  display:flex;
+  flex-direction: row;
+}
+
+p {
+  border: 1px solid black;
+  padding: 1em;
+  width: 80px;
+  margin: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+    #flex-container {
+      display:flex;
+      flex-direction: column;
+    }
+}

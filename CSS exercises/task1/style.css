@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+h1,h3 {
+  color:red;
+  text-transform: uppercase;
+}
+
+figcaption {
+  color:darkblue;
+}
+
+section {
+  font-family: Roboto;
+  font-size: 12px;
+  margin-left: 5%;
+}
+
+section p {
+  margin-left: 5%;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+}

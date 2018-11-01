@@ -1,0 +1,14 @@
+table {
+  width: 95%;
+  text-align: left;
+  border-collapse: collapse;
+}
+tr:first-child {
+  background-color: lightblue;
+}
+tr, td {
+  border-bottom: 2px solid lightgrey;
+}
+tr th {
+  background-color: lightblue;
+}

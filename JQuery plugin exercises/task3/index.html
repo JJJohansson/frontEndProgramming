@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+      <link href="https://unpkg.com/nanogallery2@2.0.0/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/nanogallery2@2.0.0/dist/jquery.nanogallery2.core.min.js"></script>
+      <title>Task 3</title>
+   </head>
+   <body>
+      <div id="gallery"></div>
+      <script>
+         $(document).ready(function() {
+           $("#gallery").nanogallery2({
+            thumbnailWidth: 300,
+          	thumbnailHeight: 'auto',
+            thumbnailBaseGridHeight: 100,
+            itemsBaseURL: './pics/',
+            items: [
+              {src: 'earth_from_space.jpg', srct: 'earth_from_space.jpg', title: 'Earth'},
+              {src: 'jupiter_gany.jpg', srct: 'jupiter_gany.jpg', title: 'Jupiter, 1'},
+              {src: 'jupiter1.jpg', srct: 'jupiter1.jpg', title: 'Jupiter, 2'},
+              {src: 'marsglobe1.jpg', srct: 'marsglobe1.jpg', title: 'Mars'},
+              {src: 'neptune.jpg', srct: 'neptune.jpg', title: 'Neptune'},
+              {src: 'saturn1.jpg', srct: 'saturn1.jpg', title: 'Saturn'},
+              {src: 'solarsystem.jpg', srct: 'solarsystem.jpg', title: 'Solar system'},
+              {src: 'uranus.jpg', srct: 'uranus.jpg', title: 'Uranus'},
+              {src: 'venus.jpg', srct: 'venus.jpg', title: 'Venus'},
+              {src: 'venuscloud2.jpg', srct: 'venuscloud2.jpg', title: 'Venus, 2'},
+              {src: 'mercuryglobe2.jpg', srct: 'mercuryglobe2.jpg', title: 'Mercury'},
+              {src: 'titan.jpg', srct: 'titan.jpg', title: 'Titan'},
+              {src: 'venuscloud.jpg', srct: 'venuscloud.jpg', title: 'Venus, 3'},
+            ]
+          });
+         });
+      </script>
+   </body>
+</html>
