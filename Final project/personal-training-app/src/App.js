@@ -3,6 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  getCustomers = () => {
+    fetch('https://customerrest.herokuapp.com/api/customers/')
+    .then((response) => {
+      if (!response.ok) {
+        console.log('Oops! Something went wrong!')
+      }
+      else
+        return response.json()
+    })
+    .then((responseJSON) => console.log(responseJSON));
+  }
+
+  componentDidMount() {
+    this.getCustomers();
+  }
+
   render() {
     return (
       <div className="App">
