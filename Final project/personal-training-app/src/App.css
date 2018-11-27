@@ -3,23 +3,35 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  animation: App-logo-spin infinite 7.5s linear;
+  height: 80px;
+  margin: auto;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100px;
+  padding: 20px;
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+table {
+  text-align: middle;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+tr, td {
+  border-bottom: 2px solid lightgrey;
+}
+
+#customers, #trainings, .nav-tabs {
+  margin: 0 auto;
+  width: 70%;
 }
 
 @keyframes App-logo-spin {
