@@ -13,6 +13,17 @@ class App extends Component {
     }
   }
 
+  addFilterPlaceholder = () => {
+    const filters = document.querySelectorAll("div.rt-th > input"); // this seems to be the only way to add placeholder to react-table filter input field
+    for (let filter of filters) {
+      filter.placeholder = "Search..";
+    }
+  }
+
+  componentDidMount() {
+    this.addFilterPlaceholder();
+  }
+
   render() {
     return (
       <div className="App">

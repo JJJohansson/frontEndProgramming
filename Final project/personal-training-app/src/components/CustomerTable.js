@@ -42,6 +42,7 @@ class CustomerTable extends Component {
         this.getCustomers();
     }
 
+
     render() {
         return (
             <div id="customers">
