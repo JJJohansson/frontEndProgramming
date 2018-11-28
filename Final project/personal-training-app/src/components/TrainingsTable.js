@@ -35,7 +35,7 @@ class TrainingsTable extends Component {
                     return training.date = moment((training.date)).format('MM/DD/YYYY hh:mm');
                 });
 
-                this.setState({ trainings: trainings })
+                this.setState({ trainings })
             })
             .catch((error) => {
                 console.log(error);
