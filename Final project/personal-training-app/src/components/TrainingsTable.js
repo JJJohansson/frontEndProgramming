@@ -13,27 +13,33 @@ class TrainingsTable extends Component {
 
     getCustomers = () => {
         fetch('https://customerrest.herokuapp.com/gettrainings/')
-        .then((response) => {
-            if (!response.ok) {
-                console.log('Oops! Something went wrong!')
-            }
-            else
-                return response.json()
-        })
-        .then((responseJSON) => {
-            console.log(responseJSON);
-            responseJSON.map((item, index) => {
-                return responseJSON[index].date = moment((responseJSON[index].date)).format('MM/DD/YYYY hh:mm');
-            });
-            responseJSON.map((item, index) => {
-                return responseJSON[index].duration = responseJSON[index].duration.toString() // <-- so we can use "filterCaseInsensitive" function
-            });
+            .then((response) => {
+                if (!response.ok) {
+                    console.log('Oops! Something went wrong!')
+                }
+                else
+                    return response.json()
+            })
+            .then((responseJSON) => {
 
-            this.setState({ trainings: responseJSON })
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+                let trainings = responseJSON.filter((training) => {
+                    // someone added a training without a customer to the database. null values broke the code so here's a quick fix.
+                    if (!training.customer) {
+                        return false;
+                    }
+                    return true;
+                })
+
+                trainings.map((training, index) => {
+                    // format the date to correct form
+                    return training.date = moment((training.date)).format('MM/DD/YYYY hh:mm');
+                });
+
+                this.setState({ trainings: trainings })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     filterCaseInsensitive = (filter, row) => {
@@ -55,7 +61,7 @@ class TrainingsTable extends Component {
         return (
             <div id="trainings">
                 <ReactTable data={this.state.trainings}
-                    defaultPageSize={15}
+                    defaultPageSize={10}
                     filterable
                     defaultFilterMethod={(filter, row) => this.filterCaseInsensitive(filter, row)}
                     columns={[
@@ -74,7 +80,8 @@ class TrainingsTable extends Component {
                         },
                         {
                             Header: 'Duration (minutes)',
-                            accessor: 'duration'
+                            accessor: 'duration',
+                            filterable: false
                         },
                     ]}
                     className="-striped -highlight"

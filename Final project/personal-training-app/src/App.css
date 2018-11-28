@@ -29,9 +29,15 @@ tr, td {
   border-bottom: 2px solid lightgrey;
 }
 
-#customers, #trainings, .nav-tabs {
+#customers, #trainings {
   margin: 0 auto;
   width: 70%;
+}
+
+.nav-tabs {
+  margin-left: 15%;
+  width: 10%;
+  border-bottom: none;
 }
 
 @keyframes App-logo-spin {
