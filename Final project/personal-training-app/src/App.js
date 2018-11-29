@@ -3,13 +3,14 @@ import logo from './dumbell.svg';
 import './App.css';
 import CustomerTable from './components/CustomerTable.js';
 import TrainingsTable from './components/TrainingsTable.js';
-import { Tab, Tabs, DropdownButton } from 'react-bootstrap';
+import ModalFormAddCustomer from './components/ModalFormAddCustomer.js';
+import { Tab, Row, Col, Nav, NavItem, MenuItem, DropdownButton } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      lgShow: false
     }
   }
 
@@ -18,7 +19,7 @@ class App extends Component {
     const filters = document.querySelectorAll("div.rt-th > input");
     for (let filter of filters) {
       filter.placeholder = "Search..";
-      filter.style.paddingLeft = "10px";  
+      filter.style.paddingLeft = "10px";
     }
   }
 
@@ -27,21 +28,36 @@ class App extends Component {
   }
 
   render() {
+    let lgClose = () => this.setState({ lgShow: false });
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <div>
-          <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-            <Tab eventKey={1} title="Customers">
-              <CustomerTable />
-            </Tab>
-            <Tab eventKey={2} title="Trainings">
-              <TrainingsTable />
-            </Tab>
-          </Tabs>
-        </div>
+        <Tab.Container id="tabs-with-dropdown" defaultActiveKey="customers">
+          <Row className="clearfix">
+            <Col sm={12}>
+              <Nav bsStyle="tabs">
+                <NavItem eventKey="customers">Customers</NavItem>
+                <NavItem eventKey="trainings">Trainings</NavItem>
+                <DropdownButton
+                  bsStyle={'default'}
+                  title='Add..'
+                >
+                  <MenuItem eventKey="customers" onClick={() => this.setState({ lgShow: true })}>New customer</MenuItem>
+                  <MenuItem eventKey="addTraining">New training</MenuItem>
+                </DropdownButton>
+              </Nav>
+            </Col>
+            <Col sm={12}>
+              <Tab.Content animation>
+                <Tab.Pane eventKey="customers"><CustomerTable /></Tab.Pane>
+                <Tab.Pane eventKey="trainings"><TrainingsTable /></Tab.Pane>
+              </Tab.Content>
+            </Col>
+          </Row>
+        </Tab.Container>
+        <ModalFormAddCustomer show={this.state.lgShow} onHide={lgClose} />
       </div>
     );
   }

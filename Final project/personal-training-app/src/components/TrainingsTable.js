@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import moment from 'moment';
+import deleteImg from './img/delete.png';
 
 class TrainingsTable extends Component {
     constructor(props) {
@@ -83,6 +84,12 @@ class TrainingsTable extends Component {
                             accessor: 'duration',
                             filterable: false
                         },
+                        {
+                            filterable: false,
+                            accessor: 'row.index',
+                            Cell: <img src={deleteImg} alt='delete' style={{ opacity: 0.4 }} width='12' height='12'></img>,
+                            width: 50
+                        }
                     ]}
                     className="-striped -highlight"
                 />

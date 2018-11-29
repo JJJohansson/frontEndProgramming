@@ -13,20 +13,19 @@ class CustomerTable extends Component {
 
     getCustomers = () => {
         fetch('https://customerrest.herokuapp.com/api/customers/')
-        .then((response) => {
-            if (!response.ok) {
-                console.log('Oops! Something went wrong!')
-            }
-            else
-                return response.json()
-        })
-        .then((responseJSON) => {
-            console.log(responseJSON);
-            this.setState({ customers: responseJSON.content })
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+            .then((response) => {
+                if (!response.ok) {
+                    console.log('Oops! Something went wrong!')
+                }
+                else
+                    return response.json()
+            })
+            .then((responseJSON) => {
+                this.setState({ customers: responseJSON.content })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     filterCaseInsensitive = (filter, row) => {
@@ -34,7 +33,7 @@ class CustomerTable extends Component {
         return (
             row[id] !== undefined ?
                 String(row[id].toLowerCase()).startsWith(filter.value.toLowerCase())
-            :
+                :
                 true
         );
     }
@@ -83,7 +82,7 @@ class CustomerTable extends Component {
                         {
                             filterable: false,
                             accessor: 'row.index',
-                            Cell: <img src={deleteImg} alt='delete' style={{opacity: 0.4}} width='12' height='12'></img>,
+                            Cell: <img src={deleteImg} alt='delete' style={{ opacity: 0.4, cursor: 'pointer' }} width='12' height='12'></img>,
                             width: 50
                         }
                     ]}

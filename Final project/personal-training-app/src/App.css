@@ -36,8 +36,25 @@ tr, td {
 
 .nav-tabs {
   margin-left: 15%;
-  width: 10%;
+  margin-right: 15%;
   border-bottom: none;
+}
+
+div.dropdown.btn-group.btn-group-default {
+  float: right;
+}
+
+#modalForm {
+  visibility: visible;
+}
+
+#formButtons > Button {
+  margin-left: 0.5em;
+  float: right;
+}
+
+.modal-content {
+  height: 650px;
 }
 
 @keyframes App-logo-spin {
