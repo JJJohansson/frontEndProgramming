@@ -3,6 +3,8 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import moment from 'moment';
 import deleteImg from './img/delete.png';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class TrainingsTable extends Component {
     constructor(props) {
@@ -12,7 +14,7 @@ class TrainingsTable extends Component {
         }
     }
 
-    getCustomers = () => {
+    getTrainings = () => {
         fetch('https://customerrest.herokuapp.com/gettrainings/')
             .then((response) => {
                 if (!response.ok) {
@@ -52,9 +54,37 @@ class TrainingsTable extends Component {
                 true
         );
     }
-
+    
+    deleteTraining = (id) => {
+        let toBeDeleted = this.state.trainings.filter((value) => {
+            return id === value.id
+        })
+        confirmAlert({
+            title: 'Confirm to delete',
+            message: `Delete ${toBeDeleted[0].activity} ${toBeDeleted[0].customer.firstname}`,
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        fetch(`https://customerrest.herokuapp.com/api/trainings/${id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        })
+                        .then(() => this.getTrainings())
+                        .catch((error) => alert(error));
+                    }
+                },
+                {
+                    label: 'No'
+                }
+            ]
+        })
+    }
+    
     componentWillMount() {
-        this.getCustomers();
+        this.getTrainings();
     }
 
     render() {
@@ -86,8 +116,11 @@ class TrainingsTable extends Component {
                         },
                         {
                             filterable: false,
-                            accessor: 'row.index',
-                            Cell: <img src={deleteImg} alt='delete' style={{ opacity: 0.4 }} width='12' height='12'></img>,
+                            sortable: false,
+                            accessor: 'id',
+                            Cell: ({ value }) => (
+                                <img src={deleteImg} alt='delete' style={{ opacity: 0.4, cursor: 'pointer' }} width='12' height='12' onClick={() => this.deleteTraining(value)}></img>
+                            ),
                             width: 50
                         }
                     ]}

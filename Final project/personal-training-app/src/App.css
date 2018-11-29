@@ -48,13 +48,17 @@ div.dropdown.btn-group.btn-group-default {
   visibility: visible;
 }
 
-#formButtons > Button {
+#formButtons > * {
   margin-left: 0.5em;
   float: right;
 }
 
 .modal-content {
-  height: 650px;
+  height: 640px;
+}
+
+#asd > div > div {
+  height: 400px;
 }
 
 @keyframes App-logo-spin {

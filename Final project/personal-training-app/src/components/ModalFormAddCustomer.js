@@ -39,6 +39,7 @@ class ModalFormAddCustomer extends Component {
             body: JSON.stringify(newCustomer)
         })
             .then(this.props.onHide())
+            .then(() => window.location.reload())
             .catch((error) => console.log(error));
     }
 
@@ -52,15 +53,14 @@ class ModalFormAddCustomer extends Component {
             email: '',
             phoneNumber: ''
         })
-        window.location.reload();
     }
 
     render() {
         return (
             <Modal
                 {...this.props}
-                bsSize="large"
-                aria-labelledby="contained-modal-title-lg"
+                bsSize="medium"
+                aria-labelledby="contained-modal-title-mg"
                 onExit={this.resetForm}
                 backdrop={'static'}
             >

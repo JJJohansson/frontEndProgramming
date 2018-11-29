@@ -4,13 +4,15 @@ import './App.css';
 import CustomerTable from './components/CustomerTable.js';
 import TrainingsTable from './components/TrainingsTable.js';
 import ModalFormAddCustomer from './components/ModalFormAddCustomer.js';
+import ModalFormAddTraining from './components/ModalFormAddTraining.js';
 import { Tab, Row, Col, Nav, NavItem, MenuItem, DropdownButton } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lgShow: false
+      customerModal: false,
+      trainingModal: false
     }
   }
 
@@ -28,7 +30,8 @@ class App extends Component {
   }
 
   render() {
-    let lgClose = () => this.setState({ lgShow: false });
+    let closeCustomerModal = () => this.setState({ customerModal: false });
+    let closeTrainingModal = () => this.setState({ trainingModal: false });
     return (
       <div className="App">
         <header className="App-header">
@@ -44,8 +47,8 @@ class App extends Component {
                   bsStyle={'default'}
                   title='Add..'
                 >
-                  <MenuItem eventKey="customers" onClick={() => this.setState({ lgShow: true })}>New customer</MenuItem>
-                  <MenuItem eventKey="addTraining">New training</MenuItem>
+                  <MenuItem eventKey="customers" onClick={() => this.setState({ customerModal: true })}>New customer</MenuItem>
+                  <MenuItem eventKey="trainings" onClick={() => this.setState({ trainingModal: true })}>New training</MenuItem>
                 </DropdownButton>
               </Nav>
             </Col>
@@ -57,7 +60,8 @@ class App extends Component {
             </Col>
           </Row>
         </Tab.Container>
-        <ModalFormAddCustomer show={this.state.lgShow} onHide={lgClose} />
+        <ModalFormAddCustomer show={this.state.customerModal} onHide={closeCustomerModal} />
+        <ModalFormAddTraining show={this.state.trainingModal} onHide={closeTrainingModal} />
       </div>
     );
   }
