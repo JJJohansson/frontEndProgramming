@@ -32,7 +32,7 @@ class CustomerTable extends Component {
     }
 
     filterCaseInsensitive = (filter, row) => {
-        const id = filter.pivotId || filter.id;
+        const id = filter.id;
         return (
             row[id] !== undefined ?
                 String(row[id].toLowerCase()).startsWith(filter.value.toLowerCase())

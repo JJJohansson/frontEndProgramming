@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button, Form, FormGroup, ControlLabel, FormControl, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Modal, Button, FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
 
 class ModalFormAddTraining extends Component {
     constructor(props) {

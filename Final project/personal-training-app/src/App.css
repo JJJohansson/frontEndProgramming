@@ -40,7 +40,7 @@ tr, td {
   border-bottom: none;
 }
 
-div.dropdown.btn-group.btn-group-default {
+li.dropdown {
   float: right;
 }
 
