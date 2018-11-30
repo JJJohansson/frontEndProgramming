@@ -45,8 +45,8 @@ class App extends Component {
                 <NavItem eventKey="trainings">Trainings</NavItem>
                 <NavDropdown title="Dropdown" >
                   {/* HOW TO DISABLE TAB CHANGE ON CLICK? */}
-                  <MenuItem activeHref="customers" activeKey="customers" onClick={() => this.setState({ customerModal: true })}>New customer</MenuItem>
-                  <MenuItem activeHref="trainings" activeKey="trainings" onClick={() => this.setState({ trainingModal: true })}>New training</MenuItem>
+                  <MenuItem eventKey="customers" onClick={() => this.setState({ customerModal: true })}>New customer</MenuItem>
+                  <MenuItem eventKey="trainings" onClick={() => this.setState({ trainingModal: true })}>New training</MenuItem>
                 </NavDropdown>
               </Nav>
             </Col>
