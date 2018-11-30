@@ -80,7 +80,6 @@ class ModalFormAddTraining extends Component {
         return (
             <Modal
                 {...this.props}
-                bsSize="medium"
                 aria-labelledby="contained-modal-title-lg"
                 onExit={this.resetForm}
                 backdrop={'static'}
@@ -119,42 +118,3 @@ class ModalFormAddTraining extends Component {
 }
 
 export default ModalFormAddTraining;
-
-/*
-
-<Form>
-                        <FormGroup controlId="formInlineFirstName">
-                            <ControlLabel>First name</ControlLabel>{' '}
-                            <FormControl type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
-                        </FormGroup>{' '}
-                        <FormGroup controlId="formInlineLastName">
-                            <ControlLabel>Last name</ControlLabel>{' '}
-                            <FormControl type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} />
-                        </FormGroup>{' '}
-                        <FormGroup controlId="formInlineStreetAddress">
-                            <ControlLabel>Street address</ControlLabel>{' '}
-                            <FormControl type="text" name="streetAddress" value={this.state.streetAddress} onChange={this.handleChange} />
-                        </FormGroup>{' '}
-                        <FormGroup controlId="formInlinePostcode">
-                            <ControlLabel>Postcode</ControlLabel>{' '}
-                            <FormControl type="text" name="postcode" value={this.state.postcode} onChange={this.handleChange} />
-                        </FormGroup>{' '}
-                        <FormGroup controlId="formInlineCity">
-                            <ControlLabel>City</ControlLabel>{' '}
-                            <FormControl type="text" name="city" value={this.state.city} onChange={this.handleChange} />
-                        </FormGroup>{' '}
-                        <FormGroup controlId="formInlineEmail">
-                            <ControlLabel>Email</ControlLabel>{' '}
-                            <FormControl type="email" name="email" value={this.state.email} onChange={this.handleChange} />
-                        </FormGroup>{' '}
-                        <FormGroup controlId="formInlinePhone">
-                            <ControlLabel>Phone number</ControlLabel>{' '}
-                            <FormControl type="text" name="phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange} />
-                        </FormGroup>{' '}
-                        <div id="formButtons">
-                            <Button bsStyle="danger" onClick={this.props.onHide}>Cancel</Button>
-                            <Button bsStyle="success" onClick={this.handleSubmit}>Save</Button>
-                        </div>
-                    </Form>
-
-*/

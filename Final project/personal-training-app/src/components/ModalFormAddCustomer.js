@@ -59,7 +59,6 @@ class ModalFormAddCustomer extends Component {
         return (
             <Modal
                 {...this.props}
-                bsSize="medium"
                 aria-labelledby="contained-modal-title-mg"
                 onExit={this.resetForm}
                 backdrop={'static'}

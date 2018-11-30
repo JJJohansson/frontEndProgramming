@@ -61,7 +61,7 @@ class TrainingsTable extends Component {
         })
         confirmAlert({
             title: 'Confirm to delete',
-            message: `Delete ${toBeDeleted[0].activity} ${toBeDeleted[0].customer.firstname}`,
+            message: `Delete ${toBeDeleted[0].activity} from ${toBeDeleted[0].customer.firstname}?`,
             buttons: [
                 {
                     label: 'Yes',
@@ -119,7 +119,10 @@ class TrainingsTable extends Component {
                             sortable: false,
                             accessor: 'id',
                             Cell: ({ value }) => (
-                                <img src={deleteImg} alt='delete' style={{ opacity: 0.4, cursor: 'pointer' }} width='12' height='12' onClick={() => this.deleteTraining(value)}></img>
+                                <img src={deleteImg} alt='delete' 
+                                style={{ opacity: 0.4, cursor: 'pointer' }} 
+                                width='12' height='12' onClick={() => this.deleteTraining(value)}>
+                                </img>
                             ),
                             width: 50
                         }

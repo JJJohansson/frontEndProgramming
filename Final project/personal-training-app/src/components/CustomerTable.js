@@ -75,52 +75,54 @@ class CustomerTable extends Component {
 
 
     render() {
-        const columns = [
-            {
-                Header: 'First name',
-                accessor: 'firstname'
-            },
-            {
-                Header: 'Last name',
-                accessor: 'lastname'
-            },
-            {
-                Header: 'Email',
-                accessor: 'email'
-            },
-            {
-                Header: 'Phone number',
-                accessor: 'phone'
-            },
-            {
-                Header: 'Street address',
-                accessor: 'streetaddress'
-            },
-            {
-                Header: 'Postcode',
-                accessor: 'postcode'
-            },
-            {
-                Header: 'City',
-                accessor: 'city'
-            },
-            {
-                filterable: false,
-                accessor: 'links[0].href',
-                sortable: false,
-                Cell: ({ value }) => (
-                    <img src={deleteImg} alt='delete' style={{ opacity: 0.4, cursor: 'pointer' }} width='12' height='12' onClick={() => this.deleteCustomer(value)}></img>
-                ) ,
-                width: 50
-            }
-        ]
         return (
             <div id="customers">
                 <ReactTable data={this.state.customers}
                     defaultPageSize={10}
                     filterable
                     defaultFilterMethod={(filter, row) => this.filterCaseInsensitive(filter, row)}
-                    columns={columns}
+                    columns={[
+                        {
+                            Header: 'First name',
+                            accessor: 'firstname'
+                        },
+                        {
+                            Header: 'Last name',
+                            accessor: 'lastname'
+                        },
+                        {
+                            Header: 'Email',
+                            accessor: 'email'
+                        },
+                        {
+                            Header: 'Phone number',
+                            accessor: 'phone'
+                        },
+                        {
+                            Header: 'Street address',
+                            accessor: 'streetaddress'
+                        },
+                        {
+                            Header: 'Postcode',
+                            accessor: 'postcode'
+                        },
+                        {
+                            Header: 'City',
+                            accessor: 'city'
+                        },
+                        {
+                            filterable: false,
+                            accessor: 'links[0].href',
+                            sortable: false,
+                            Cell: ({ value }) => (
+                                <img src={deleteImg} alt='delete' 
+                                style={{ opacity: 0.4, cursor: 'pointer' }} 
+                                width='12' height='12' onClick={() => this.deleteCustomer(value)}>
+                                </img>
+                            ) ,
+                            width: 50
+                        }
+                    ]}
                     className="-striped -highlight"
                 />
             </div>

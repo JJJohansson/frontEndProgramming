@@ -43,10 +43,8 @@ class App extends Component {
               <Nav bsStyle="tabs">
                 <NavItem eventKey="customers">Customers</NavItem>
                 <NavItem eventKey="trainings">Trainings</NavItem>
-                <DropdownButton
-                  bsStyle={'default'}
-                  title='Add..'
-                >
+                {/* NOTE!! CONSIDER USING <NavDropdown> https://react-bootstrap.github.io/components/navs/#navs-dropdown */}
+                <DropdownButton bsStyle={'default'} title='Add..'>
                   <MenuItem eventKey="customers" onClick={() => this.setState({ customerModal: true })}>New customer</MenuItem>
                   <MenuItem eventKey="trainings" onClick={() => this.setState({ trainingModal: true })}>New training</MenuItem>
                 </DropdownButton>
