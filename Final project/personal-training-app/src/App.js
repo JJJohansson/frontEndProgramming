@@ -5,7 +5,7 @@ import CustomerTable from './components/CustomerTable.js';
 import TrainingsTable from './components/TrainingsTable.js';
 import ModalFormAddCustomer from './components/ModalFormAddCustomer.js';
 import ModalFormAddTraining from './components/ModalFormAddTraining.js';
-import { Tab, Row, Col, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Tab, Row, Col, Nav, NavItem, NavDropdown, MenuItem, DropdownButton } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
@@ -43,11 +43,13 @@ class App extends Component {
               <Nav bsStyle="tabs">
                 <NavItem eventKey="customers">Customers</NavItem>
                 <NavItem eventKey="trainings">Trainings</NavItem>
-                <NavDropdown title="Dropdown" >
-                  {/* HOW TO DISABLE TAB CHANGE ON CLICK? */}
+                <DropdownButton
+                  bsStyle="default"
+                  title="Add.."
+                >
                   <MenuItem eventKey="customers" onClick={() => this.setState({ customerModal: true })}>New customer</MenuItem>
                   <MenuItem eventKey="trainings" onClick={() => this.setState({ trainingModal: true })}>New training</MenuItem>
-                </NavDropdown>
+                </DropdownButton>
               </Nav>
             </Col>
             <Col sm={12}>
