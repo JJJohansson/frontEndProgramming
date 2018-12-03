@@ -23,7 +23,6 @@ class CustomerTable extends Component {
                     return response.json()
             })
             .then((responseJSON) => {
-                console.log(responseJSON);
                 this.setState({ customers: responseJSON.content })
             })
             .catch((error) => {
@@ -78,7 +77,7 @@ class CustomerTable extends Component {
         return (
             <div id="customers">
                 <ReactTable data={this.state.customers}
-                    defaultPageSize={10}
+                    defaultPageSize={15}
                     filterable
                     defaultFilterMethod={(filter, row) => this.filterCaseInsensitive(filter, row)}
                     columns={[

@@ -29,15 +29,19 @@ tr, td {
   border-bottom: 2px solid lightgrey;
 }
 
-#customers, #trainings {
+#customers, #trainings, #calendar {
   margin: 0 auto;
   width: 70%;
+}
+
+#calendar {
+  margin-top: 1em;
+  height: 700px;
 }
 
 .nav-tabs {
   margin-left: 15%;
   margin-right: 15%;
-  border-bottom: none;
 }
 
 li.dropdown {

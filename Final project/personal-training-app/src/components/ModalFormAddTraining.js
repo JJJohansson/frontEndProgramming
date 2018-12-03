@@ -28,7 +28,6 @@ class ModalFormAddTraining extends Component {
                     return response.json()
             })
             .then((responseJSON) => {
-                console.log(responseJSON);
                 this.setState({ customers: responseJSON.content, customer: responseJSON.content[0].links[0].href })
             })
             .catch((error) => {
@@ -47,7 +46,6 @@ class ModalFormAddTraining extends Component {
             duration: this.state.duration,
             customer: this.state.customer
         }
-        console.log(newTraining);
 
         await fetch('https://customerrest.herokuapp.com/api/trainings', {
             method: 'POST',

@@ -92,7 +92,7 @@ class TrainingsTable extends Component {
         return (
             <div id="trainings">
                 <ReactTable data={this.state.trainings}
-                    defaultPageSize={10}
+                    defaultPageSize={15}
                     filterable
                     defaultFilterMethod={(filter, row) => this.filterCaseInsensitive(filter, row)}
                     columns={[
