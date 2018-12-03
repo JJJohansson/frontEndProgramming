@@ -5,7 +5,7 @@ import CustomerTable from './components/CustomerTable.js';
 import TrainingsTable from './components/TrainingsTable.js';
 import ModalFormAddCustomer from './components/ModalFormAddCustomer.js';
 import ModalFormAddTraining from './components/ModalFormAddTraining.js';
-import { Tab, Row, Col, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Tab, Row, Col, Nav, NavItem, NavDropdown, MenuItem, DropdownButton } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {

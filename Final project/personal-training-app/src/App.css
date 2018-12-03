@@ -61,6 +61,18 @@ li.dropdown {
   height: 400px;
 }
 
+div.react-confirm-alert-button-group > button:first-of-type {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+
+div.react-confirm-alert-button-group > button:last-of-type {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
