@@ -43,10 +43,11 @@ class App extends Component {
               <Nav bsStyle="tabs">
                 <NavItem eventKey="customers">Customers</NavItem>
                 <NavItem eventKey="trainings">Trainings</NavItem>
+                <NavItem eventKey="calendar">Calendar</NavItem>
                 <NavDropdown title="Dropdown" >
                   {/* HOW TO DISABLE TAB CHANGE ON CLICK? */}
-                  <MenuItem eventKey="customers" onClick={() => this.setState({ customerModal: true })}>New customer</MenuItem>
-                  <MenuItem eventKey="trainings" onClick={() => this.setState({ trainingModal: true })}>New training</MenuItem>
+                  <MenuItem eventKey="addCustomers" onClick={() => this.setState({ customerModal: true })}>New customer</MenuItem>
+                  <MenuItem eventKey="addTrainings" onClick={() => this.setState({ trainingModal: true })}>New training</MenuItem>
                 </NavDropdown>
               </Nav>
             </Col>
@@ -54,6 +55,8 @@ class App extends Component {
               <Tab.Content animation>
                 <Tab.Pane eventKey="customers"><CustomerTable /></Tab.Pane>
                 <Tab.Pane eventKey="trainings"><TrainingsTable /></Tab.Pane>
+                <Tab.Pane eventKey="addCustomers"><CustomerTable /></Tab.Pane>
+                <Tab.Pane eventKey="addTrainings"><TrainingsTable /></Tab.Pane>
               </Tab.Content>
             </Col>
           </Row>
